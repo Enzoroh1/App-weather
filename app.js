@@ -24,11 +24,13 @@ window.addEventListener("load", () => {
               console.log(data.main.temp) //mostrar los datos
                 let temp = Math.round(data.main.temp)//redondea el valor decimal
                 temperatureValue.textContent = `${temp} ºC` //lo tiramos al HTML
-                console.log(data.weather[0].description) 
                 // -------------------------------------
                 let desc = data.weather[0].description
                 temperatureDescription.textContent = desc.toUpperCase() //mayuscula(toUpperCase)
                 // -------------------------------------
+                location.textContent = data.name
+                // -------------------------------------
+                windSpeed.textContent = data.wind.speed
 
               })
             .catch( error => { //capturar algun error
